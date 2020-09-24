@@ -1,0 +1,2 @@
+FileName	Image dimension	Resolution	DWI count	Max b-value	Neighboring DWI correlation	# Bad Slices
+dwi	96 96 63 	2.2917 2.2917 2.3 	50	1001.005981	0.900497	0	
