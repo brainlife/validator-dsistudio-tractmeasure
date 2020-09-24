@@ -4,7 +4,7 @@ import json
 import os
 import re
 
-results = {"errors": [], "warnings": [], "meta": {}}
+results = {"errors": [], "warnings": [], "meta": { "tractmeasures": {}}}
 
 with open('config.json', encoding='utf-8') as config_json:
     config = json.load(config_json)
@@ -36,7 +36,7 @@ else:
     data = rows.pop(0).split("\t")
     for column in header:
         column = re.sub('[^A-Za-z0-9]+', '', column)
-        results["meta"][column] = data.pop(0).strip()
+        results["meta"]["tractmeasures"][column] = data.pop(0).strip()
 
 with open("product.json", "w") as fp:
     json.dump(results, fp)
